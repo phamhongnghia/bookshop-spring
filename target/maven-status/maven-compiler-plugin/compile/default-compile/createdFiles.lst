@@ -1,0 +1,9 @@
+com\bookshop\service\implement\ProductServiceImpl.class
+com\bookshop\config\ConfigJpa.class
+com\bookshop\api\ProductApi.class
+com\bookshop\entity\Product.class
+com\bookshop\repository\ProductRepository.class
+com\bookshop\service\ProductService.class
+com\bookshop\App.class
+com\bookshop\entity\BaseEntity.class
+com\bookshop\controller\ProductController.class
