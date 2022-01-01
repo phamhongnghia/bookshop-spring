@@ -24,7 +24,7 @@ public class ProductCart extends BaseEntity{
     private Product product;
 
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "username")
     private User user;
 

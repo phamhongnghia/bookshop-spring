@@ -1,40 +1,25 @@
-package com.bookshop.entity;
+package com.bookshop.dto;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Column;
 
-@Entity
-@Table(name = "user")
-public class User {
+public class UserDto {
 
-    @Id
-    @Column(name = "username", unique = true)
     private String userName;
-    @Column(name = "password")
     private String passWord;
-    @Column(name = "full_name")
     private String fullName;
-    @Column(name = "phone_number")
     private String phoneNumber;
-    @Column(name = "address")
     private String address;
-    @Column(name = "image_user")
     private String imageUser;
+    private String roleName;
+    private String message;
+    private Integer roleId;
 
-    @ManyToOne
-    @JoinColumn(name = "roleid", nullable = false)
-    private UserRole user_role;
-
-    @OneToMany(mappedBy = "user")
-    private List<ProductCart> productCart = new ArrayList<>();
-
-    public UserRole getUser_role() {
-        return user_role;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setUser_role(UserRole user_role) {
-        this.user_role = user_role;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public String getUserName() {
@@ -85,11 +70,20 @@ public class User {
         this.imageUser = imageUser;
     }
 
-    public void setProductCart(List<ProductCart> productCart) {
-        this.productCart = productCart;
+    public String getRoleName() {
+        return roleName;
     }
-    public List<ProductCart> getProductCart() {
-        return productCart;
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
 }

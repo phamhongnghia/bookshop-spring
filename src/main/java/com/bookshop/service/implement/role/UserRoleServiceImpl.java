@@ -1,10 +1,13 @@
 package com.bookshop.service.implement.role;
 
+import com.bookshop.convert.ConvertUser;
 import com.bookshop.convert.ConvertUserRole;
 import com.bookshop.dto.UserRoleDto;
 import com.bookshop.entity.UserRole;
+import com.bookshop.repository.UserRepository;
 import com.bookshop.repository.UserRoleRepository;
 import com.bookshop.service.UserRoleService;
+import com.bookshop.utils.ListConstantEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +16,6 @@ import java.util.List;
 
 @Service
 public class UserRoleServiceImpl implements UserRoleService {
-
-    private String MESSAGE_SUCCESS = "SUCCESS";
-    private String MESSAGE_FAIL = "FAIL";
 
     @Autowired
     private UserRoleRepository m_userRoleRepo;
@@ -29,9 +29,9 @@ public class UserRoleServiceImpl implements UserRoleService {
         String message = null;
         if(userRole != null){
             m_userRoleRepo.save(userRole);
-            message = MESSAGE_SUCCESS;
+            message = ListConstantEnum.MESSAGE_SUCCESS.getName();
         }else {
-            message = MESSAGE_FAIL;
+            message = ListConstantEnum.MESSAGE_FAIL.getName();
         }
         return message;
     }
@@ -41,9 +41,9 @@ public class UserRoleServiceImpl implements UserRoleService {
         String message = null;
         if(id != null){
             m_userRoleRepo.deleteById(id);
-            message = MESSAGE_SUCCESS;
+            message = ListConstantEnum.MESSAGE_SUCCESS.getName();
         }else {
-            message = MESSAGE_FAIL;
+            message = ListConstantEnum.MESSAGE_FAIL.getName();
         }
         return message;
     }
@@ -56,9 +56,9 @@ public class UserRoleServiceImpl implements UserRoleService {
             userRole.setRoleId(userRoleDto.getRoleId());
             userRole.setRoleName(userRoleDto.getRoleName());
             m_userRoleRepo.save(userRole);
-            message = MESSAGE_SUCCESS;
+            message = ListConstantEnum.MESSAGE_SUCCESS.getName();
         }else {
-            message = MESSAGE_FAIL;
+            message = ListConstantEnum.MESSAGE_FAIL.getName();
         }
         return message;
     }
