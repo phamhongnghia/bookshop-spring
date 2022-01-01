@@ -1,10 +1,8 @@
 package com.bookshop.service.implement.role;
 
-import com.bookshop.convert.ConvertUser;
 import com.bookshop.convert.ConvertUserRole;
 import com.bookshop.dto.UserRoleDto;
 import com.bookshop.entity.UserRole;
-import com.bookshop.repository.UserRepository;
 import com.bookshop.repository.UserRoleRepository;
 import com.bookshop.service.UserRoleService;
 import com.bookshop.utils.ListConstantEnum;
