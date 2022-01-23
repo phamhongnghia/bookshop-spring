@@ -1,4 +1,4 @@
-package com.bookshop.api.single;
+package com.bookshop.api.singleProduct;
 
 
 import com.bookshop.dto.ProductDto;

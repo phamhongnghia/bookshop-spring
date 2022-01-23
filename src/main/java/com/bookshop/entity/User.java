@@ -10,9 +10,9 @@ public class User {
 
     @Id
     @Column(name = "username", unique = true)
-    private String userName;
+    private String username;
     @Column(name = "password")
-    private String passWord;
+    private String password;
     @Column(name = "full_name")
     private String fullName;
     @Column(name = "phone_number")
@@ -21,6 +21,8 @@ public class User {
     private String address;
     @Column(name = "image_user")
     private String imageUser;
+    @Column(name = "email")
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "roleid", nullable = false)
@@ -37,20 +39,20 @@ public class User {
         this.user_role = user_role;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFullName() {
@@ -83,6 +85,14 @@ public class User {
 
     public void setImageUser(String imageUser) {
         this.imageUser = imageUser;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setProductCart(List<ProductCart> productCart) {

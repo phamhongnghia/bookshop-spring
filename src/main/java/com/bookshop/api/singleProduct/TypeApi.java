@@ -1,10 +1,7 @@
-package com.bookshop.api.single;
+package com.bookshop.api.singleProduct;
 
-import com.bookshop.convert.ConvertType;
 import com.bookshop.dto.TypeDto;
-import com.bookshop.entity.Type;
 import com.bookshop.service.TypeService;
-import org.springframework.beans.TypeConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

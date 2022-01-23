@@ -4,8 +4,8 @@ import javax.persistence.Column;
 
 public class UserDto {
 
-    private String userName;
-    private String passWord;
+    private String username;
+    private String password;
     private String fullName;
     private String phoneNumber;
     private String address;
@@ -22,20 +22,20 @@ public class UserDto {
         this.roleId = roleId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFullName() {

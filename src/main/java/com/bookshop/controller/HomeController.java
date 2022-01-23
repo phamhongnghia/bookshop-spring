@@ -16,4 +16,10 @@ public class HomeController {
     public String singleProduct(){
         return "singleProduct";
     }
+
+    @GetMapping("/login")
+    public String loginPage(){
+        return "register";
+    }
+
 }

@@ -9,8 +9,8 @@ public class ConvertUser {
 
     public UserDto convertToDto(User user){
         UserDto userDto = new UserDto();
-        userDto.setUserName(user.getUserName());
-        userDto.setPassWord(user.getPassWord());
+        userDto.setUsername(user.getUsername());
+        userDto.setPassword(user.getPassword());
         userDto.setImageUser(user.getImageUser());
         userDto.setAddress(user.getAddress());
         userDto.setFullName(user.getFullName());
@@ -21,8 +21,8 @@ public class ConvertUser {
 
     public User convertToEntity(UserDto userDto){
         User user = new User();
-        user.setUserName(userDto.getUserName());
-        user.setPassWord(userDto.getPassWord());
+        user.setUsername(userDto.getUsername());
+        user.setPassword(userDto.getPassword());
         user.setImageUser(userDto.getImageUser());
         user.setFullName(userDto.getFullName());
         user.setAddress(userDto.getAddress());

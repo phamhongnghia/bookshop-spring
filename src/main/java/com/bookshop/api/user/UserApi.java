@@ -1,7 +1,6 @@
 package com.bookshop.api.user;
 
 import com.bookshop.dto.UserDto;
-import com.bookshop.entity.User;
 import com.bookshop.service.UserService;
 import com.bookshop.utils.ListConstantEnum;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +25,16 @@ public class UserApi {
         return m_userService.updateUser(userDto);
     }
 
-    @RequestMapping(value = "/info-user/{userName}", method = RequestMethod.GET)
-    public UserDto findUser(@PathVariable String userName){
+    @RequestMapping(value = "/info-user/{username}/{password}", method = RequestMethod.GET)
+    public UserDto findUser(@PathVariable String username, @PathVariable  String password){
         UserDto userDto = new UserDto();
-        if(userName != null){
-            userDto = m_userService.findUser(userName);
-            userDto.setMessage(ListConstantEnum.MESSAGE_SUCCESS.getName());
+        if(username != null && password != null){
+            userDto = m_userService.findByUsernameAndPassword(username, password);
+            if(userDto.getUsername() != null){
+                userDto.setMessage(ListConstantEnum.MESSAGE_SUCCESS.getName());
+            }else {
+                userDto.setMessage(ListConstantEnum.MESSAGE_FAIL.getName());
+            }
         }else {
             userDto.setMessage(ListConstantEnum.MESSAGE_FAIL.getName());
         }

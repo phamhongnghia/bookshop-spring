@@ -37,8 +37,8 @@ public class UserServiceImpl implements UserService {
         User user = m_convertUser.convertToEntity(userDto);
         UserRole userRole = m_userRoleRepo.findById(userDto.getRoleId()).get();
         user.setUser_role(userRole);
-        if(user.getUserName() != null){
-            if(m_userRepo.findById(user.getUserName()).isPresent()){
+        if(user.getUsername() != null){
+            if(m_userRepo.findById(user.getUsername()).isPresent()){
                 message = ListConstantEnum.MESSAGE_EXIST_USER.getName();
             }else {
                 m_userRepo.save(user);
@@ -52,8 +52,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String updateUser(UserDto userDto) {
-        User user = m_userRepo.findById(userDto.getUserName()).get();
-        user.setUserName(userDto.getUserName());
+        User user = m_userRepo.findById(userDto.getUsername()).get();
+        user.setUsername(userDto.getUsername());
         user.setImageUser(userDto.getImageUser());
         user.setPhoneNumber(userDto.getPhoneNumber());
         user.setFullName(userDto.getFullName());
@@ -63,8 +63,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto findUser(String userName) {
-        User user = m_userRepo.findById(userName).get();
+    public UserDto findByUsernameAndPassword(String username, String password) {
+        User user = m_userRepo.findByUsernameAndPassword(username, password);
         UserDto userDto = new UserDto();
         if(user != null){
             userDto.setMessage(ListConstantEnum.MESSAGE_SUCCESS.getName());

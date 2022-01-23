@@ -16,7 +16,7 @@
 .form__register input:focus{
 	outline: none;
 }
-.form__register input[type="submit"]{
+.form__register input[type="button"]{
 	margin: 20px 0;
     padding: 10px;
     width: 25%;
