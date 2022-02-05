@@ -17,7 +17,7 @@ function loadData(){
 
 	var list = new Array();
         $.ajax({
-            url: "/api/listProduct",
+            url: "/api/list-product",
             method: "GET"
         }).done(function (response) {
             $.each(response, function (index, item) {

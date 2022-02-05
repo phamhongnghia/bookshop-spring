@@ -1,40 +1,8 @@
-package com.bookshop.entity;
+package com.bookshop.dto;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "detail_product")
-public class DetailProduct extends BaseEntity{
-
-    @Column(name = "supplier")
+public class DetailProductDto {
     private String supplier;
-    @Column(name = "publisher")
     private String publisher;
-    @Column(name = "author")
-    private String author;
-    @Column(name = "formProduct")
-    private String formProduct;
-    @Column(name = "translator")
-    private String translator;
-    @Column(name = "description")
-    private String description;
-    @Column(name = "contentProduct")
-    private String contentProduct;
-    @Column(name = "publishingYear")
-    private String publishingYear;
-    @Column(name = "weightProduct")
-    private String weightProduct;
-    @Column(name = "numberOfPages")
-    private String numberOfPages;
-
-    // Mapping table
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "typeCode")
-    private Type type;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "productCode")
-    private Product product;
 
     public String getSupplier() {
         return supplier;
@@ -116,20 +84,12 @@ public class DetailProduct extends BaseEntity{
         this.numberOfPages = numberOfPages;
     }
 
-    /*public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }*/
-
-    /*public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }*/
-
+    private String author;
+    private String formProduct;
+    private String translator;
+    private String description;
+    private String contentProduct;
+    private String publishingYear;
+    private String weightProduct;
+    private String numberOfPages;
 }

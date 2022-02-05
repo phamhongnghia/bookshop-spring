@@ -7,27 +7,27 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO )
-    @Column(name = "product_code", nullable = false)
+    @Column(name = "productCode")
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer productCode;
     @Column(name = "dem")
     private Integer dem;
-    @Column(name = "product_name")
+    @Column(name = "productName")
     private String productName;
-    @Column(name = "product_image")
+    @Column(name = "productImage")
     private String productImage;
     @Column(name = "cost")
     private Integer cost;
     @Column(name = "discount")
     private Integer discount;
-    @Column(name = "product_status")
+    @Column(name = "productStatus")
     private String productStatus;
 
     @OneToOne(mappedBy = "product")
     private DetailProduct detailProduct;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "type_code", nullable = false)
+    @JoinColumn(name = "typeCode", nullable = false)
     private Type type;
 
     @OneToOne(mappedBy = "product")

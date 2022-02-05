@@ -1,4 +1,4 @@
-package com.bookshop.api.singleProduct;
+package com.bookshop.api.product.typeProduct;
 
 import com.bookshop.dto.TypeDto;
 import com.bookshop.service.TypeService;
@@ -24,10 +24,8 @@ public class TypeApi {
     }
 
     @RequestMapping(value = "/add-type", method = RequestMethod.POST, produces = "application/json")
-    public String saveType(@RequestBody TypeDto typeDto){
-        String message;
-        m_typeService.saveType(typeDto);
-        return "message";
+    public String addType(@RequestBody TypeDto typeDto){
+        return m_typeService.addType(typeDto);
     }
 
 }

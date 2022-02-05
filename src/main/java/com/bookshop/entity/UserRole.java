@@ -9,11 +9,11 @@ import java.util.List;
 public class UserRole{
 
     @Id
-    @Column(name = "roleid")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "roleId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer roleId;
 
-    @Column(name = "role_name")
+    @Column(name = "roleName")
     private String roleName;
 
     @OneToMany(mappedBy = "user_role")

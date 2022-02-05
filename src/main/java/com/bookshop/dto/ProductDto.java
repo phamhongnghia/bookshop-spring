@@ -4,7 +4,7 @@ public class ProductDto {
 
     private Integer productCode;
     private Integer dem;
-    private String typeCode;
+    private Integer typeCode;
     private String productName;
     private String productImage;
     private Integer cost;
@@ -27,11 +27,11 @@ public class ProductDto {
         this.dem = dem;
     }
 
-    public String getTypeCode() {
+    public Integer getTypeCode() {
         return typeCode;
     }
 
-    public void setTypeCode(String typeCode) {
+    public void setTypeCode(Integer typeCode) {
         this.typeCode = typeCode;
     }
 

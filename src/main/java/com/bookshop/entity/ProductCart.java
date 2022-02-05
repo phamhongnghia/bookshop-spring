@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name = "product_cart")
 public class ProductCart extends BaseEntity{
 
-    @Column(name = "product_name")
+    @Column(name = "productName")
     private String productName;
     @Column(name = "cost")
     private Integer cost;
@@ -16,11 +16,11 @@ public class ProductCart extends BaseEntity{
     private Integer discount;
     @Column(name = "quantity")
     private Integer quantity;
-    @Column(name = "total_money")
+    @Column(name = "totalMoney")
     private Integer totalMoney;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_code")
+    @JoinColumn(name = "productCode")
     private Product product;
 
 

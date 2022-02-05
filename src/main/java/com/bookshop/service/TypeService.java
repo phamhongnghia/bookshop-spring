@@ -8,5 +8,5 @@ import java.util.List;
 public interface TypeService {
     List<TypeDto> findAllType();
 
-    void saveType(TypeDto typeDto);
+    String addType(TypeDto typeDto);
 }

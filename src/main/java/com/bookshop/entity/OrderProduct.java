@@ -9,7 +9,7 @@ public class OrderProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "order_code")
+    @Column(name = "orderCode")
     private Integer orderCode;
 
     @OneToOne(fetch = FetchType.EAGER)
@@ -17,17 +17,19 @@ public class OrderProduct {
     private User user;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_code")
+    @JoinColumn(name = "productCode")
     private Product product;
 
-    @Column(name = "phone_number")
+    @Column(name = "phoneNumber")
     private String phoneNumber;
     @Column(name = "address")
     private String address;
-    @Column(name = "create_day")
+    @Column(name = "createDay")
     private String createDay;
-    @Column(name = "status_order")
+    @Column(name = "statusOrder")
     private String statusOrder;
+    @Column(name = "email")
+    private String email;
 
     public Integer getOrderCode() {
         return orderCode;
@@ -83,6 +85,14 @@ public class OrderProduct {
 
     public void setStatusOrder(String statusOrder) {
         this.statusOrder = statusOrder;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 }

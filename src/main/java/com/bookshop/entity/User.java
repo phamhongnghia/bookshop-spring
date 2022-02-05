@@ -13,19 +13,19 @@ public class User {
     private String username;
     @Column(name = "password")
     private String password;
-    @Column(name = "full_name")
+    @Column(name = "fullName")
     private String fullName;
-    @Column(name = "phone_number")
+    @Column(name = "phoneNumber")
     private String phoneNumber;
     @Column(name = "address")
     private String address;
-    @Column(name = "image_user")
+    @Column(name = "imageUser")
     private String imageUser;
     @Column(name = "email")
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "roleid", nullable = false)
+    @JoinColumn(name = "roleId", nullable = false)
     private UserRole user_role;
 
     @OneToMany(mappedBy = "user")

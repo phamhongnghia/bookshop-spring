@@ -7,7 +7,8 @@ import java.util.Map;
 public enum ListConstantEnum {
     MESSAGE_SUCCESS("SUCCESS"),
     MESSAGE_FAIL("FAIL"),
-    MESSAGE_EXIST_USER("USER EXIST");
+    MESSAGE_EXIST_USER("USER EXIST"),
+    MESSAGE_NOT_EXIST_PRODUCT("NOT EXIST PRODUCT");
 
     private final String m_name;
 
@@ -25,5 +26,6 @@ public enum ListConstantEnum {
         m_enums.put("SUCCESS", MESSAGE_SUCCESS);
         m_enums.put("FAIL", MESSAGE_FAIL);
         m_enums.put("USER EXIST", MESSAGE_EXIST_USER);
+        m_enums.put("NOT EXIST PRODUCT", MESSAGE_NOT_EXIST_PRODUCT);
     }
 }

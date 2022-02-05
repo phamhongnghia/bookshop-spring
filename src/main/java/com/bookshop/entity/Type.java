@@ -9,10 +9,10 @@ import java.util.List;
 public class Type{
 
     @Id
-    @Column(name = "type_code")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "typeCode")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer typeCode;
-    @Column(name = "type_name")
+    @Column(name = "typeName")
     private String typeName;
 
     @OneToMany(mappedBy = "type")
@@ -34,12 +34,12 @@ public class Type{
         this.typeName = typeName;
     }
 
-    public List<Product> getProducts() {
+    /*public List<Product> getProducts() {
         return products;
     }
 
     public void setProducts(List<Product> products) {
         this.products = products;
-    }
+    }*/
 
 }

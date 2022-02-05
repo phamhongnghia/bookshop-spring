@@ -9,7 +9,7 @@ public class FeedBack extends BaseEntity{
     @Column(name = "content")
     private String content;
 
-    @Column(name = "create_day")
+    @Column(name = "createDay")
     private String createDay;
 
     @OneToOne
@@ -17,7 +17,7 @@ public class FeedBack extends BaseEntity{
     private User user;
 
     @OneToOne
-    @JoinColumn(name = "product_code")
+    @JoinColumn(name = "productCode")
     private Product product;
 
     public String getContent() {

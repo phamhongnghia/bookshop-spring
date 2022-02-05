@@ -5,6 +5,7 @@ import com.bookshop.dto.TypeDto;
 import com.bookshop.entity.Type;
 import com.bookshop.repository.TypeRepository;
 import com.bookshop.service.TypeService;
+import com.bookshop.utils.ListConstantEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,8 +32,9 @@ public class TypeServiceImpl implements TypeService {
     }
 
     @Override
-    public void saveType(TypeDto typeDto) {
+    public String addType(TypeDto typeDto) {
         Type type = m_convertType.convertToEntity(typeDto);
         m_typeRepo.save(type);
+        return ListConstantEnum.MESSAGE_SUCCESS.getName();
     }
 }

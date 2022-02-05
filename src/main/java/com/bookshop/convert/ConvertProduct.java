@@ -2,14 +2,21 @@ package com.bookshop.convert;
 
 import com.bookshop.dto.ProductDto;
 import com.bookshop.entity.Product;
+import com.bookshop.entity.Type;
+import com.bookshop.repository.TypeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ConvertProduct {
+    @Autowired
+    private TypeRepository m_typeRepo;
+
     public Product convertToEntity(ProductDto productDto){
         Product product = new Product();
         product.setProductCode(productDto.getProductCode());
-        //product.setTypeCode(productDto.getTypeCode());
+        Type type = m_typeRepo.getById(productDto.getTypeCode());
+        product.setType(type);
         product.setProductName(productDto.getProductName());
         product.setProductImage(productDto.getProductImage());
         product.setCost(productDto.getCost());
