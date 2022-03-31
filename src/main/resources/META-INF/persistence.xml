@@ -3,5 +3,11 @@
     <persistence-unit name="persistence-data">
         <class>com.bookshop.entity.Product</class>
         <class>com.bookshop.entity.User</class>
+        <class>com.bookshop.entity.DetailProduct</class>
+        <class>com.bookshop.entity.FeedBack</class>
+        <class>com.bookshop.entity.Type</class>
+        <class>com.bookshop.entity.UserRole</class>
+        <class>com.bookshop.entity.ProductCart</class>
+        <class>com.bookshop.entity.OrderProduct</class>
     </persistence-unit>
 </persistence>
