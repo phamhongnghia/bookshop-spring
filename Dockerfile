@@ -7,8 +7,7 @@ ADD . .
 
 # install java 8
 RUN apt-get update
-RUN apt-get install -y openjdk-8-jdk maven && \
-    apt-get install -y wget unzip nginx
+RUN apt-get install -y openjdk-8-jdk maven
 
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
 
@@ -19,4 +18,4 @@ RUN service mysql start
 RUN mvn clean install
 
 EXPOSE 3306 8080
-ENTRYPOINT ["java", "-jar", "/target/bookshop-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["mvn", "spring-boot:run"]

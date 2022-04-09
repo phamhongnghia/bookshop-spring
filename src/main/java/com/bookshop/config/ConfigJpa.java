@@ -10,7 +10,6 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -20,7 +19,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.bookshop.repository")
 @ComponentScan(basePackages = "com.bookshop")
-public class ConfigJpa implements WebMvcConfigurer {
+public class ConfigJpa {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
@@ -46,16 +45,16 @@ public class ConfigJpa implements WebMvcConfigurer {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/bookshop?createDatabaseIfNotExist=TRUE");
         dataSource.setUsername("root");
-        dataSource.setPassword("12345678");
+        dataSource.setPassword("password");
         return dataSource;
     }
 
     @Bean
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "update");
-        //properties.setProperty("hibernate.hbm2ddl.auto", "create");
-        properties.setProperty("hibernate.hbm2ddl.auto", "none");
+        //properties.setProperty("hibernate.hbm2ddl.auto", "update");
+        properties.setProperty("hibernate.hbm2ddl.auto", "create");
+        //properties.setProperty("hibernate.hbm2ddl.auto", "none");
         properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
         return properties;
     }
