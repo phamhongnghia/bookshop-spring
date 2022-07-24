@@ -42,10 +42,10 @@ public class ConfigJpa {
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/bookshop?createDatabaseIfNotExist=TRUE");
         dataSource.setUsername("root");
-        dataSource.setPassword("password");
+        dataSource.setPassword("12345678");
         return dataSource;
     }
 
